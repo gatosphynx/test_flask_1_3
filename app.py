@@ -1,9 +1,13 @@
 from flask import Flask
 
 
+app = Flask(name)
+=======
+
 
 =======
 app = Flask(__name__)
+
 
 
 @app.route('/init', methods = ['GET'])
@@ -12,7 +16,10 @@ def init():
 
 
 =======
+
+=======
   
+
 
 @app.route('/read/:<content>', methods = ['GET'])
 def read(content):
@@ -24,12 +31,23 @@ def admin():
   return {"payload":alfa}
 
 
+=======
+
+
 @app.route('/delete/:<content>', methods = ['DELETE'])
 def read(content):
     return {"payload":qux}
 
 
+@app.route('/create/:<content>', methods = ['POST'])
+def read(content):
+    return {"payload":bar} 
+  
+if name == 'main':
+=======
+
 =======
 if __name__ == '__main__':
+
 
     app.run(debug=True)
